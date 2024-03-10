@@ -11,21 +11,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- TODO: split fonts based on loaded style? -->
   <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Instrument+Serif:ital@0;1&family=Lexend+Deca:wght@100..700&display=swap" rel="stylesheet">
-  <title>Mikael Jagekrans | Backend Developer | DevOps Engineer</title>
+  <title>Mikael Jagekrans | Polyglot Developer | DevOps Engineer</title>
   <script>let FF_FOUC_FIX;</script>
+  <noscript>
+    <style>
+      button.toggle-roles-button {
+        display: none;
+      }
+
+      #previous-roles {
+        padding-bottom: 2em;
+      }
+
+      .role {
+        cursor: default;
+      }
+
+      .role .role-header .caret {
+        display: none;
+      }
+
+      #additional-roles {
+        display: block;
+      }
+
+      .role .role-description {
+        display: block;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body>
   <header>
     <div id="header-title">
-      <!-- <span id="header-title-name" class="calligraffitti-regular">Mikael Jagekrans</span> -->
       <span id="header-title-name" class="instrument-serif regular">Mikael Jagekrans</span>
-      <span id="header-title-subtitle">Backend Developer | DevOps Engineer</span>
+      <span id="header-title-subtitle">Polyglot Developer | DevOps Engineer</span>
       <span id="header-title-subtitle">Freelancer</span>
     </div>
   </header>
 
-  <!-- <main class="lexend-deca light"> -->
   <main class="lexend-deca extralight">
     <div id="profile-image">
       <img src="images/profile-original.jpeg" alt="Profile picture of Mikael Jagekrans">
@@ -35,12 +60,8 @@
 
     <section id="presentation">
       <h2>Who am I?</h2>
-      <p>
-        I am a versatile backend developer with a passion for building robust systems and optimizing development processes. With extensive experience in DevOps- and platform technologies, I have a deep understanding of the entire software development lifecycle, from coding to deployment and maintenance.
-      </p>
-      <p>
-        My technical repertoire spans multiple programming languages and tools, and I have successfully delivered scalable and reliable solutions to meet clients' needs. My ability to create streamlined development workflows and automate previously manual processes has resulted in faster deliveries with fewer bugs and more robust systems.
-      </p>
+      <p>I am a versatile polyglot back-end developer with a passion for building robust systems and optimizing development processes. With extensive experience in DevOps- and platform technologies, I have a deep understanding of the entire software development lifecycle, from coding to deployment and maintenance.</p>
+      <p>My technical repertoire spans multiple programming languages and tools, and I have successfully delivered scalable and reliable solutions to meet clients' needs. My ability to create streamlined development workflows and automate previously manual processes has resulted in faster deliveries with fewer bugs and more robust systems.</p>
     </section>
 
     <section id="previous-roles">
@@ -124,16 +145,148 @@
 
         <div class="role">
           <div class="role-header">
-            <h3>Magine</h3>
+            <h3>Magine AB</h3>
             <div class="caret"></div>
           </div>
           <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Backend Engineer</span>
+            <span class="role-title">Back-end Engineer</span>
             <span class="role-period">Sep 16 - May 18</span>
           </div>
           <div class="role-description">
             <p>Development and maintenance of the audio/video transcoder stack and automated perceptual quality tests, as well as the transcoder support systems and subtitle pipeline. The systems were built in Elixir utilizing purely functional programming techniques.</p>
             <p>Worked on a smart TV application for Tizen and Orsay (Samsung TV OSs) including a buffered real-time subtitle decoder due to a lack of support for modern subtitle formats in Orsay.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Board Intelligence Ltd.</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Full-stack Engineer</span>
+            <span class="role-period">Mar 16 - Sep 16</span>
+          </div>
+          <div class="role-description">
+            <p>Developed and maintained a board reporting tool written in Ruby-on-Rails, mainly focusing on the backend API and the PDF generation pipeline. Migrated the system from a single server to a self-hosted UK-wide distributed server cluster.</p>
+            <p>Planned and executed a migration of the web frontend from AngularJS to React w/ Redux.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Flow XO LLC</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Back-end Engineer | Consultant</span>
+            <span class="role-period">Jan 16 - Mar 16</span>
+          </div>
+          <div class="role-description">
+            <p>Developed a tool for automating integrations between different external services and APIs in JavaScript/Node.js, leading to a big reduction in time needed to configure a new integration in the pre-existing integration automation system.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Tuzame AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Full-stack Engineer</span>
+            <span class="role-period">Mar 14 - Nov 15</span>
+          </div>
+          <div class="role-description">
+            <p>Designed and implemented a large-scale centralized multi-vendor product database backed by a graph database and a Redis cache, complete with a web UI for administration. All systems were written in JavaScript and Node.js with the frontend built in AngularJS.</p>
+            <p>Built a white-label cross-platform mobile application solution and built several mobile apps on top of it.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Vendre AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Back-end Engineer | Consultant</span>
+            <span class="role-period">Dec 13 - Feb 14</span>
+          </div>
+          <div class="role-description">
+            <p>Analyzed and evaluated if their e-commerce platform could be migrated from PHP to Node.js in a cost- and time efficient manner.</p>
+            <p>Majorly improved the query performance for one of their client’s online store by reconfiguring their Solr search engine instance.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Hogia Terminal Systems AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Lead Web Developer</span>
+            <span class="role-period">Dec 12 - Dec 13</span>
+          </div>
+          <div class="role-description">
+            <p>Designed, built, and maintained a web-based terminal management system and helped out with maintaining their old application server written in VB6. The new web platform was built in C# .NET.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Svensk Lånemarknad AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Software Developer</span>
+            <span class="role-period">Sep 12 - Nov 12</span>
+          </div>
+          <div class="role-description">
+            <p>Migrated and refactored a pre-existing loan application system and peripheral support systems to a more modern, performant, and fault-tolerant solution written in Ruby.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>ComAround AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Software Engineer</span>
+            <span class="role-period">Mar 11 - Sep 12</span>
+          </div>
+          <div class="role-description">
+            <p>Maintenance of an older self-service support platform and design, development and maintenance of a new version of the platform built from the ground-up using modern web techniques. The original system was built in ASP.NET Web Forms (C#) and the new system was built in ASP.NET MVC (C#) with an AngularJS frontend.</p>
+            <p>Responsible for designing, implementing, and configuring a search engine solution based on Apache Solr.</p>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="role">
+          <div class="role-header">
+            <h3>Sphinxly AB</h3>
+            <div class="caret"></div>
+          </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Web Developer</span>
+            <span class="role-period">Dec 09 - Sep 10</span>
+          </div>
+          <div class="role-description">
+            <p>Implementation of websites from designs on top of an in-house built Content Management System (CMS) in parallel with some development and maintenance of the CMS itself. Everything was built in C# and ASP.NET Web Forms.</p>
           </div>
         </div>
 

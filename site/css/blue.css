@@ -142,3 +142,11 @@ footer .copyright {
   color: var(--whiteish);
   font-size: 1.2em;
 }
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 1024px) {
+
+}
