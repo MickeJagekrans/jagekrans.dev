@@ -1,0 +1,182 @@
+:root {
+  --font-didot: "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 1em;
+  font-size: 3em;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  min-height: 15vh;
+  width: 100%;
+  padding: 8em 0;
+}
+
+#header-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#header-title-name {
+  font-size: 8em;
+}
+
+#header-title-subtitle {
+  font-size: 2.2em;
+  margin-top: 0.8em;
+  letter-spacing: 0.15em;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main img {
+  width: 40%;
+  border-radius: 50%;
+}
+
+#profile-image {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#contact-link {
+  margin-top: 0;
+  width: 60vw;
+}
+
+section {
+  padding: 1em 5vw;
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+
+section h2 {
+  font-size: 1.8em;
+}
+
+#previous-roles {
+  padding-bottom: 0;
+}
+
+#previous-roles hr {
+  height: 2px;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.role {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  cursor: pointer;
+}
+
+.role .role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5em;
+}
+
+.role h3 {
+  margin: 0;
+}
+
+.role .role-description {
+  display: none;
+}
+
+.role.expanded .role-description {
+  display: block;
+}
+
+.role .caret {
+  background-image: url(/icons/caret.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.role.expanded .caret {
+  transform: rotate(180deg);
+}
+
+.role .role-metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role .role-period {
+  font-size: 0.8em;
+}
+
+.toggle-roles-button {
+  width: 100%;
+  text-align: center;
+  padding: 1.6em;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2em;
+}
+
+#show-less-roles {
+  display: none;
+}
+
+#additional-roles {
+  display: none;
+}
+
+#additional-roles.show {
+  display: block;
+}
+
+a#contact-phone {
+  padding: 0.5em;
+  font-size: 2em;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.8em 0.5em;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+#contact-form input[type="submit"] {
+  cursor: pointer;
+}
+
+footer {
+  min-height: 20vh;
+  width: 100%;
+  font-size: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

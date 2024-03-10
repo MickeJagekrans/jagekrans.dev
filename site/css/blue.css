@@ -1,0 +1,144 @@
+:root {
+  --dark-blue: #202c39;
+  --blue-green: #283845;
+  --pale-bronze: #b8b08d;
+  --gold: #F2D492;
+  --copper: #F29559;
+  --dark-copper: #c4740b;
+  --whiteish: #EEF0EB;
+  --font-tahoma: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+.instrument-serif {
+  font-weight: 400;
+  font-family: "Instrument Serif", serif;
+}
+
+.instrument-serif.regular {
+  font-style: normal;
+}
+
+.lexend-deca {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.lexend-deca.thin {
+  font-weight: 100;
+}
+
+.lexend-deca.extralight {
+  font-weight: 200;
+}
+
+.lexend-deca.light {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* TODO: extend classes with font classes in SASS */
+
+html {
+  background-color: var(--dark-blue);
+}
+
+body {
+  font-family: var(--font-tahoma);
+  font-weight: 200;
+}
+
+header {
+  color: var(--copper);
+}
+
+#header-title-subtitle {
+  /* TODO: change */
+  color: var(--pale-bronze);
+}
+
+a {
+  color: var(--copper);
+}
+
+section {
+  color: var(--whiteish);
+}
+
+section h2 {
+  color: var(--copper);
+  /* TODO: extend via preprocessor later */
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#previous-roles {
+  background-color: var(--blue-green);
+}
+
+#previous-roles hr {
+  background-color: var(--copper);
+}
+
+.role {
+  border-color: var(--dark-copper) !important;
+}
+
+.role:hover h3 {
+  color: var(--whiteish)!important;
+}
+
+.role:hover .caret {
+  filter: invert(97%) sepia(2%) saturate(422%) hue-rotate(52deg) brightness(103%) contrast(88%);
+}
+
+.role h3 {
+  color: var(--copper);
+  font-weight: 300;
+}
+
+.role .role-metadata {
+  color: var(--pale-bronze);
+}
+
+/* https://isotropic.co/tool/hex-color-to-css-filter/ */
+.role .caret {
+  filter: invert(61%) sepia(51%) saturate(505%) hue-rotate(339deg) brightness(98%) contrast(93%);
+}
+
+.toggle-roles-button {
+  background-color: transparent;
+  color: var(--copper);
+  font-weight: 200;
+}
+
+#contact-form input,
+#contact-form textarea {
+  background-color: var(--blue-green);
+  color: var(--whiteish);
+  border: 2px solid var(--blue-green);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border: 2px solid var(--copper);
+}
+
+#contact-form input[type="submit"] {
+  background-color: var(--copper);
+  color: var(--dark-blue);
+}
+
+#contact-form input[type="submit"]:hover {
+  color: var(--whiteish);
+}
+
+footer {
+  background-color: black;
+}
+
+footer .copyright {
+  color: var(--whiteish);
+  font-size: 1.2em;
+}
