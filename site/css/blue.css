@@ -85,14 +85,6 @@ section h2 {
   border-color: var(--dark-copper) !important;
 }
 
-.role:hover h3 {
-  color: var(--whiteish)!important;
-}
-
-.role:hover .caret {
-  filter: invert(97%) sepia(2%) saturate(422%) hue-rotate(52deg) brightness(103%) contrast(88%);
-}
-
 .role h3 {
   color: var(--copper);
   font-weight: 300;
@@ -140,13 +132,30 @@ footer {
 
 footer .copyright {
   color: var(--whiteish);
-  font-size: 1.2em;
+}
+
+@media (hover: hover) {
+  .role:hover h3 {
+    color: var(--whiteish)!important;
+  }
+
+  .role:hover .caret {
+    filter: invert(97%) sepia(2%) saturate(422%) hue-rotate(52deg) brightness(103%) contrast(88%);
+  }
 }
 
 @media (min-width: 768px) {
-  
-}
+  section#previous-roles {
+    background-color: var(--dark-blue);
+  }
 
-@media (min-width: 1024px) {
+  a#contact-phone {
+    font-size: min(2em, 3.4vw);
+  }
 
+  section#contact input[type="text"],
+  section#contact input[type="email"],
+  section#contact textarea {
+    background-color: var(--blue-green);
+  }
 }

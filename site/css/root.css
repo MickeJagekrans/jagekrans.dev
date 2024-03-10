@@ -7,19 +7,19 @@ a {
   justify-content: center;
   align-self: center;
   padding: 1em;
-  font-size: 3em;
+  font-size: 1.5em;
 }
 
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
   min-height: 15vh;
   width: 100%;
-  padding: 8em 0;
+  padding: 3em 0;
 }
 
 #header-title {
@@ -28,13 +28,18 @@ header {
   text-align: center;
 }
 
+#header-title hr {
+  height: 2px;
+  width: 88%;
+}
+
 #header-title-name {
-  font-size: 8em;
+  font-size: 14vw;
 }
 
 #header-title-subtitle {
-  font-size: 2.2em;
-  margin-top: 0.8em;
+  font-size: 3.6vw;
+  margin-top: 0.5em;
   letter-spacing: 0.15em;
 }
 
@@ -49,6 +54,11 @@ main img {
   border-radius: 50%;
 }
 
+#profile-image-contact {
+  display: flex;
+  flex-direction: column;
+}
+
 #profile-image {
   width: 100vw;
   display: flex;
@@ -58,16 +68,17 @@ main img {
 #contact-link {
   margin-top: 0;
   width: 60vw;
+  font-size: min(2em, 8vw);
 }
 
 section {
-  padding: 1em 5vw;
-  font-size: 2.5em;
+  padding: 0.5em 5vw;
+  font-size: 1.1em;
   line-height: 1.5em;
 }
 
 section h2 {
-  font-size: 1.8em;
+  font-size: 2em;
 }
 
 #previous-roles {
@@ -121,6 +132,7 @@ section h2 {
 .role .role-metadata {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .role .role-period {
@@ -150,7 +162,7 @@ section h2 {
 
 a#contact-phone {
   padding: 0.5em;
-  font-size: 2em;
+  font-size: min(2em, 9vw);
 }
 
 #contact-form {
@@ -173,18 +185,90 @@ a#contact-phone {
 }
 
 footer {
-  min-height: 20vh;
+  min-height: 14vh;
   width: 100%;
-  font-size: 1.8em;
+  font-size: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
+}
+
+@media (max-width: 419px) {
+  .role .role-metadata {
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 768px) {
-  
-}
+  #header-title hr {
+    width: 50%;
+  }
 
-@media (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
+  main img {
+    width: 15em;
+  }
+
+  #header-title-name {
+    font-size: 4em;
+  }
+
+  #header-title-subtitle {
+    font-size: 1em;
+  }
+
+  #profile-image-contact {
+    flex-direction: column;
+    width: 40%;
+    align-self: center;
+    padding: 0 2em 0 3em;
+  }
+
+  #profile-image {
+    width: 100%;
+  }
+
+  a#contact-link {
+    width: 100%;
+    display: none;
+  }
+
+  section {
+    padding: 0.5em 2em;
+  }
+
+  section#presentation {
+    width: 60%;
+    padding-bottom: 2em;
+    padding-right: 3em;
+  }
+
+  section#previous-roles {
+    width: 60%;
+    order: 2;
+    padding-right: 3em;
+  }
+
+  .role .role-period {
+    font-size: 1em;
+  }
+
+  section#contact {
+    width: 40%;
+    order: 1;
+    padding-left: 3em;
+  }
+
+  a#contact-phone {
+    font-size: min(2em, 3.4vw);
+  }
+
+  footer {
+    height: 20vh;
+  }
 }

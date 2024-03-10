@@ -3,14 +3,26 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Mikael Jagekrans is a polyglot developer and DevOps engineer. This is his CV website.">
+  <meta name="keywords"
+    content="Mikael Jagekrans, Developer, DevOps, Engineer, Consultant, Freelancer, Back-end, Front-end, Full-stack, CV, Resume">
+  <meta name="author" content="Mikael Jagekrans">
+  <meta property="og:title" content="Mikael Jagekrans | Polyglot Developer | DevOps Engineer">
+  <meta property="og:description"
+    content="Mikael Jagekrans is a polyglot developer and DevOps engineer. This is his CV website.">
+  <meta property="og:image" content="/images/profile-original.jpeg">
+  <meta property="og:url" content="https://jagekrans.dev">
   <link rel="stylesheet" type="text/css" href="css/modern-normalize.css">
   <link rel="stylesheet" type="text/css" href="css/root.css">
   <link rel="stylesheet" type="text/css" href="css/blue.css">
-  <!-- <link rel="stylesheet" type="text/css" href="css/green.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- TODO: split fonts based on loaded style? -->
-  <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Instrument+Serif:ital@0;1&family=Lexend+Deca:wght@100..700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Instrument+Serif:ital@0;1&family=Lexend+Deca:wght@100..700&display=swap"
+    rel="stylesheet">
   <title>Mikael Jagekrans | Polyglot Developer | DevOps Engineer</title>
   <script>let FF_FOUC_FIX;</script>
   <noscript>
@@ -46,22 +58,30 @@
   <header>
     <div id="header-title">
       <span id="header-title-name" class="instrument-serif regular">Mikael Jagekrans</span>
+      <hr>
       <span id="header-title-subtitle">Polyglot Developer | DevOps Engineer</span>
       <span id="header-title-subtitle">Freelancer</span>
     </div>
   </header>
 
   <main class="lexend-deca extralight">
-    <div id="profile-image">
-      <img src="images/profile-original.jpeg" alt="Profile picture of Mikael Jagekrans">
-    </div>
+    <div id="profile-image-contact">
+      <div id="profile-image">
+        <img src="images/profile-original.jpeg" alt="Profile picture of Mikael Jagekrans">
+      </div>
 
-    <a href="#contact" id="contact-link">Contact me</a>
+      <a href="#contact" id="contact-link">Contact me</a>
+    </div>
 
     <section id="presentation">
       <h2>Who am I?</h2>
-      <p>I am a versatile polyglot back-end developer with a passion for building robust systems and optimizing development processes. With extensive experience in DevOps- and platform technologies, I have a deep understanding of the entire software development lifecycle, from coding to deployment and maintenance.</p>
-      <p>My technical repertoire spans multiple programming languages and tools, and I have successfully delivered scalable and reliable solutions to meet clients' needs. My ability to create streamlined development workflows and automate previously manual processes has resulted in faster deliveries with fewer bugs and more robust systems.</p>
+      <p>I am a versatile back-end developer with a passion for building robust systems and optimizing development
+        processes. With extensive experience in DevOps- and platform technologies, I have a deep understanding of the
+        entire software development lifecycle, from coding to deployment and maintenance.</p>
+      <p>My technical repertoire spans multiple programming languages and tools, and I have successfully delivered
+        scalable and reliable solutions to meet clients' needs. My ability to create streamlined development workflows
+        and automate previously manual processes has resulted in faster deliveries with fewer bugs and more robust
+        systems.</p>
     </section>
 
     <section id="previous-roles">
@@ -79,9 +99,13 @@
           <span class="role-period">May 23 - Oct 23</span>
         </div>
         <div class="role-description">
-          <p>Development, maintenance, and improvement of CI/CD pipelines in Azure DevOps for their customer meeting places.</p>
-          <p>Evaluation and implementation of different versioning approaches for internal packages and pipeline templates.</p>
-          <p>Designed and built a solution for code owner approvals with everything-as-code to allow for granular control over code changes. The code owner approvals solution was built in Node.js and vanilla JavaScript to avoid having to set up unnecessary build chains and -pipelines.</p>
+          <p>Development, maintenance, and improvement of CI/CD pipelines in Azure DevOps for their customer meeting
+            places.</p>
+          <p>Evaluation and implementation of different versioning approaches for internal packages and pipeline
+            templates.</p>
+          <p>Designed and built a solution for code owner approvals with everything-as-code to allow for granular
+            control over code changes. The code owner approvals solution was built in Node.js and vanilla JavaScript to
+            avoid having to set up unnecessary build chains and -pipelines.</p>
         </div>
       </div>
 
@@ -98,8 +122,11 @@
         </div>
         <div class="role-description">
           <p>Was responsible for Esignatur's entire CI/CD setup in Azure DevOps.</p>
-          <p>Refactored and split their existing pipeline into multiple smaller pipelines each deploying a part of the system instead of one big bang deployment. Implemented automated build validations on PRs for all active repositories.</p>
-          <p>Designed and implemented an automated release strategy complete with semantic versioning and automatic updates for their Electron desktop app.</p>
+          <p>Refactored and split their existing pipeline into multiple smaller pipelines each deploying a part of the
+            system instead of one big bang deployment. Implemented automated build validations on PRs for all active
+            repositories.</p>
+          <p>Designed and implemented an automated release strategy complete with semantic versioning and automatic
+            updates for their Electron desktop app.</p>
           <p>Set up Mac app code signing and notarization in the desktop app deployment pipeline.</p>
           <p>Introduced automated UI-testing with Selenium and SpecFlow written in C#/.NET.</p>
         </div>
@@ -117,48 +144,61 @@
           <span class="role-period">Oct 18 - Jun 22</span>
         </div>
         <div class="role-description">
-          <p>Worked with building tools and services for automating tasks such as DNS configuration, Azure AD identity management, TLS/SSL certificate issuance, and app service authentication configuration via CI/CD pipeline tasks/actions and via REST APIs.</p>
-          <p>Designed and built an internal URL shortener system in F# in .NET 5-7 using as purely functional programming techniques as possible. The system was deployed as a few Azure Functions backed by a CosmosDB database.</p>
-          <p>Designed, built, and maintained an event-driven Azure subscription creation automation system written in TypeScript and Node.js as a cluster of microservices.</p>
-          <p>Supported teams in following DevOps best practices such as writing and running automated tests, implementing everything-as-code, configuring automated deployments via CI/CD pipelines, and setting up comprehensive monitoring.</p>
+          <p>Worked with building tools and services for automating tasks such as DNS configuration, Azure AD identity
+            management, TLS/SSL certificate issuance, and app service authentication configuration via CI/CD pipeline
+            tasks/actions and via REST APIs.</p>
+          <p>Designed and built an internal URL shortener system in F# in .NET 5-7 using as purely functional
+            programming techniques as possible. The system was deployed as a few Azure Functions backed by a CosmosDB
+            database.</p>
+          <p>Designed, built, and maintained an event-driven Azure subscription creation automation system written in
+            TypeScript and Node.js as a cluster of microservices.</p>
+          <p>Supported teams in following DevOps best practices such as writing and running automated tests,
+            implementing everything-as-code, configuring automated deployments via CI/CD pipelines, and setting up
+            comprehensive monitoring.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="role">
+        <div class="role-header">
+          <h3>Telenor Connexion</h3>
+          <div class="caret"></div>
+        </div>
+        <div class="role-metadata lexend-deca extralight">
+          <span class="role-title">Software Engineer | Consultant</span>
+          <span class="role-period">May 18 - Sep 18</span>
+        </div>
+        <div class="role-description">
+          <p>Worked on an IoT device management system written in JavaScript/Node.js, mainly focusing on CI/CD pipeline
+            optimization and test suite feedback loop improvement. Project build time was successfully shortened from 20
+            minutes to 5 minutes.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="role">
+        <div class="role-header">
+          <h3>Magine AB</h3>
+          <div class="caret"></div>
+        </div>
+        <div class="role-metadata lexend-deca extralight">
+          <span class="role-title">Back-end Engineer</span>
+          <span class="role-period">Sep 16 - May 18</span>
+        </div>
+        <div class="role-description">
+          <p>Development and maintenance of the audio/video transcoder stack and automated perceptual quality tests, as
+            well as the transcoder support systems and subtitle pipeline. The systems were built in Elixir utilizing
+            purely functional programming techniques.</p>
+          <p>Worked on a smart TV application for Tizen and Orsay (Samsung TV OSs) including a buffered real-time
+            subtitle decoder due to a lack of support for modern subtitle formats in Orsay.</p>
         </div>
       </div>
 
       <hr>
 
       <div id="additional-roles">
-        <div class="role">
-          <div class="role-header">
-            <h3>Telenor Connexion</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Software Engineer | Consultant</span>
-            <span class="role-period">May 18 - Sep 18</span>
-          </div>
-          <div class="role-description">
-            <p>Worked on an IoT device management system written in JavaScript/Node.js, mainly focusing on CI/CD pipeline optimization and test suite feedback loop improvement. Project build time was successfully shortened from 20 minutes to 5 minutes.</p>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="role">
-          <div class="role-header">
-            <h3>Magine AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Back-end Engineer</span>
-            <span class="role-period">Sep 16 - May 18</span>
-          </div>
-          <div class="role-description">
-            <p>Development and maintenance of the audio/video transcoder stack and automated perceptual quality tests, as well as the transcoder support systems and subtitle pipeline. The systems were built in Elixir utilizing purely functional programming techniques.</p>
-            <p>Worked on a smart TV application for Tizen and Orsay (Samsung TV OSs) including a buffered real-time subtitle decoder due to a lack of support for modern subtitle formats in Orsay.</p>
-          </div>
-        </div>
-
-        <hr>
 
         <div class="role">
           <div class="role-header">
@@ -170,7 +210,9 @@
             <span class="role-period">Mar 16 - Sep 16</span>
           </div>
           <div class="role-description">
-            <p>Developed and maintained a board reporting tool written in Ruby-on-Rails, mainly focusing on the backend API and the PDF generation pipeline. Migrated the system from a single server to a self-hosted UK-wide distributed server cluster.</p>
+            <p>Developed and maintained a board reporting tool written in Ruby-on-Rails, mainly focusing on the backend
+              API and the PDF generation pipeline. Migrated the system from a single server to a self-hosted UK-wide
+              distributed server cluster.</p>
             <p>Planned and executed a migration of the web frontend from AngularJS to React w/ Redux.</p>
           </div>
         </div>
@@ -187,7 +229,9 @@
             <span class="role-period">Jan 16 - Mar 16</span>
           </div>
           <div class="role-description">
-            <p>Developed a tool for automating integrations between different external services and APIs in JavaScript/Node.js, leading to a big reduction in time needed to configure a new integration in the pre-existing integration automation system.</p>
+            <p>Developed a tool for automating integrations between different external services and APIs in
+              JavaScript/Node.js, leading to a big reduction in time needed to configure a new integration in the
+              pre-existing integration automation system.</p>
           </div>
         </div>
 
@@ -203,8 +247,11 @@
             <span class="role-period">Mar 14 - Nov 15</span>
           </div>
           <div class="role-description">
-            <p>Designed and implemented a large-scale centralized multi-vendor product database backed by a graph database and a Redis cache, complete with a web UI for administration. All systems were written in JavaScript and Node.js with the frontend built in AngularJS.</p>
-            <p>Built a white-label cross-platform mobile application solution and built several mobile apps on top of it.</p>
+            <p>Designed and implemented a large-scale centralized multi-vendor product database backed by a graph
+              database and a Redis cache, complete with a web UI for administration. All systems were written in
+              JavaScript and Node.js with the frontend built in AngularJS.</p>
+            <p>Built a white-label cross-platform mobile application solution and built several mobile apps on top of
+              it.</p>
           </div>
         </div>
 
@@ -220,8 +267,10 @@
             <span class="role-period">Dec 13 - Feb 14</span>
           </div>
           <div class="role-description">
-            <p>Analyzed and evaluated if their e-commerce platform could be migrated from PHP to Node.js in a cost- and time efficient manner.</p>
-            <p>Majorly improved the query performance for one of their client’s online store by reconfiguring their Solr search engine instance.</p>
+            <p>Analyzed and evaluated if their e-commerce platform could be migrated from PHP to Node.js in a cost- and
+              time efficient manner.</p>
+            <p>Majorly improved the query performance for one of their client’s online store by reconfiguring their Solr
+              search engine instance.</p>
           </div>
         </div>
 
@@ -237,7 +286,8 @@
             <span class="role-period">Dec 12 - Dec 13</span>
           </div>
           <div class="role-description">
-            <p>Designed, built, and maintained a web-based terminal management system and helped out with maintaining their old application server written in VB6. The new web platform was built in C# .NET.</p>
+            <p>Designed, built, and maintained a web-based terminal management system and helped out with maintaining
+              their old application server written in VB6. The new web platform was built in C# .NET.</p>
           </div>
         </div>
 
@@ -253,7 +303,8 @@
             <span class="role-period">Sep 12 - Nov 12</span>
           </div>
           <div class="role-description">
-            <p>Migrated and refactored a pre-existing loan application system and peripheral support systems to a more modern, performant, and fault-tolerant solution written in Ruby.</p>
+            <p>Migrated and refactored a pre-existing loan application system and peripheral support systems to a more
+              modern, performant, and fault-tolerant solution written in Ruby.</p>
           </div>
         </div>
 
@@ -269,8 +320,12 @@
             <span class="role-period">Mar 11 - Sep 12</span>
           </div>
           <div class="role-description">
-            <p>Maintenance of an older self-service support platform and design, development and maintenance of a new version of the platform built from the ground-up using modern web techniques. The original system was built in ASP.NET Web Forms (C#) and the new system was built in ASP.NET MVC (C#) with an AngularJS frontend.</p>
-            <p>Responsible for designing, implementing, and configuring a search engine solution based on Apache Solr.</p>
+            <p>Maintenance of an older self-service support platform and design, development and maintenance of a new
+              version of the platform built from the ground-up using modern web techniques. The original system was
+              built in ASP.NET Web Forms (C#) and the new system was built in ASP.NET MVC (C#) with an AngularJS
+              frontend.</p>
+            <p>Responsible for designing, implementing, and configuring a search engine solution based on Apache Solr.
+            </p>
           </div>
         </div>
 
@@ -286,7 +341,9 @@
             <span class="role-period">Dec 09 - Sep 10</span>
           </div>
           <div class="role-description">
-            <p>Implementation of websites from designs on top of an in-house built Content Management System (CMS) in parallel with some development and maintenance of the CMS itself. Everything was built in C# and ASP.NET Web Forms.</p>
+            <p>Implementation of websites from designs on top of an in-house built Content Management System (CMS) in
+              parallel with some development and maintenance of the CMS itself. Everything was built in C# and ASP.NET
+              Web Forms.</p>
           </div>
         </div>
 
@@ -299,7 +356,8 @@
 
     <section id="contact">
       <h2>Contact me</h2>
-      <p>If you are interested in hiring me for a project or if you have any questions, feel free to reach out to me via phone or the contact form below.</p>
+      <p>If you are interested in hiring me for a project or if you have any questions, feel free to reach out to me via
+        phone or the contact form below.</p>
       <a href="tel:+46720067486" id="contact-phone">+46 72 006 74 86</a>
       <div id="contact-form">
         <form action="" method="POST">
