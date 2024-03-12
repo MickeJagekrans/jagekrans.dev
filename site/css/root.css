@@ -279,8 +279,7 @@ footer {
 
   section#skills {
     width: 100%;
-    padding-left: 2em;
-    padding-right: 1em;
+    max-width: unset;
   }
 
   #skills-lists {
@@ -308,5 +307,6 @@ footer {
 @media (min-width: 1024px) {
   section {
     width: 65%;
+    max-width: 1000px;
   }
 }
