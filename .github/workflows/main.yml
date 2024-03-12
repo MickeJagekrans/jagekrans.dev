@@ -51,7 +51,7 @@ jobs:
           --name "jagekrans-dev-web-deployment"
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
           --template-file .infra/main.bicep
-          --parameters '{ "siteName": { "value": "${{ env.SITE_NAME }}" } '
+          --parameters '{ "siteName": { "value": "${{ env.SITE_NAME }}" }}'
           --mode Incremental
 
       - name: Get API token
