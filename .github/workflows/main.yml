@@ -51,13 +51,13 @@ jobs:
           --name "jagekrans-dev-web-deployment"
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
           --template-file .infra/main.bicep
-          --parameters '{ "siteName": { "value": "${{ vars.SITE_NAME }}" } '
+          --parameters '{ "siteName": { "value": "${{ env.SITE_NAME }}" } '
           --mode Incremental
 
       - name: Get API token
         id: get_token
         run: |
-          token=$(az staticwebapp secrets list --name ${{ vars.SITE_NAME }}) --query "properties.apiKey")
+          token=$(az staticwebapp secrets list --name ${{ env.SITE_NAME }}) --query "properties.apiKey")
           echo "::add-mask::$token"
           echo "::set-output name=token::$token"
 
