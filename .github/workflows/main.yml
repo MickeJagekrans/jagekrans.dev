@@ -57,7 +57,7 @@ jobs:
       - name: Get API token
         id: get_token
         run: |
-          token=$(az staticwebapp secrets list --name ${{ env.SITE_NAME }} --query "properties.apiKey")
+          token=$(az staticwebapp secrets list --name ${{ env.SITE_NAME }} --query "properties.apiKey" -o tsv)
           echo "::add-mask::$token"
           echo "SWA_TOKEN=$token" >> $GITHUB_ENV
 
@@ -66,5 +66,4 @@ jobs:
 
       - name: Deploy site
         run: |
-          cd site
-          swa deploy --deployment-token $SWA_TOKEN
+          swa deploy site --deployment-token $SWA_TOKEN
