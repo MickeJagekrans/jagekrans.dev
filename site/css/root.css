@@ -250,7 +250,7 @@ footer {
     flex-direction: column;
     width: 40%;
     align-self: center;
-    padding: 2em 2em 0 3em;
+    padding: 2em 2em 3em 3em;
   }
 
   #profile-image {
@@ -270,7 +270,7 @@ footer {
 
   section#presentation {
     width: 60%;
-    padding-bottom: 2em;
+    padding-bottom: 5em;
     padding-right: 3em;
   }
 
