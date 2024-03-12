@@ -1,4 +1,4 @@
-param location string = 'swedencentral'
+param location string = 'euwest'
 param siteName string = 'jagekrans-dev-web'
 
 resource staticSite 'Microsoft.Web/staticSites@2023-01-01' = {
