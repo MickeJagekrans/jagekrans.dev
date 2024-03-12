@@ -3,10 +3,6 @@ on:
     branches:
       - master
 
-env:
-  AZURE_RESOURCE_GROUP: jagekrans-dev-web-rg
-  AZURE_LOCATION: swedencentral
-
 permissions:
   id-token: write
   contents: read
@@ -27,6 +23,7 @@ jobs:
 
   setup-infra:
     runs-on: ubuntu-latest
+    environment: production
     # needs: build
     steps:
       - name: Checkout repository
@@ -42,14 +39,14 @@ jobs:
       - name: Create resource group
         run: >
           az group create
-          --name ${{ env.AZURE_RESOURCE_GROUP }}
-          --location ${{ env.AZURE_LOCATION }}
+          --name ${{ vars.AZURE_RESOURCE_GROUP }}
+          --location ${{ vars.AZURE_LOCATION }}
 
       - name: Deploy infrastructure
         run: >
           az deployment group create
           --name "jagekrans.dev web deployment"
-          --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
+          --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
           --template-file .infra/main.bicep --mode Incremental
 
   # deploy:
