@@ -67,4 +67,4 @@ jobs:
       - name: Deploy site
         run: |
           cd site
-          swa deploy --deployment-token ${{ $SWA_TOKEN }}
+          swa deploy --deployment-token $SWA_TOKEN
