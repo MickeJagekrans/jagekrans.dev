@@ -7,11 +7,12 @@
   --dark-copper: #c4740b;
   --whiteish: #EEF0EB;
   --font-tahoma: Tahoma, Verdana, Segoe, sans-serif;
+  --font-didot: "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
 }
 
 .instrument-serif {
   font-weight: 400;
-  font-family: "Instrument Serif", serif;
+  font-family: "Instrument Serif", Baskerville, serif;
 }
 
 .instrument-serif.regular {
@@ -30,11 +31,6 @@
 
 .lexend-deca.extralight {
   font-weight: 200;
-}
-
-.lexend-deca.light {
-  font-weight: 300;
-  letter-spacing: 0.05em;
 }
 
 hr {
@@ -59,7 +55,6 @@ header {
 }
 
 #header-title-subtitle {
-  /* TODO: change */
   color: var(--pale-bronze);
 }
 
@@ -69,8 +64,7 @@ section {
 
 section h2 {
   color: var(--copper);
-  /* TODO: extend via preprocessor later */
-  font-family: "Instrument Serif", serif;
+  font-family: "Instrument Serif", Baskerville, serif;
   font-weight: 400;
   font-style: normal;
 }
