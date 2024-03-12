@@ -45,7 +45,7 @@ jobs:
       - name: Deploy infrastructure
         run: >
           az deployment group create
-          --name "jagekrans.dev web deployment"
+          --name "jagekrans-dev-web-deployment"
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
           --template-file .infra/main.bicep --mode Incremental
 
