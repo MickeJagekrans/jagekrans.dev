@@ -7,6 +7,9 @@ permissions:
   id-token: write
   contents: read
 
+env:
+  SITE_NAME: jagekrans-dev-web
+
 jobs:
   # build:
   #   runs-on: ubuntu-latest
@@ -21,7 +24,7 @@ jobs:
   #         name: site
   #         path: site
 
-  setup-infra:
+  setup-infra-and-deploy:
     runs-on: ubuntu-latest
     environment: production
     # needs: build
@@ -47,18 +50,18 @@ jobs:
           az deployment group create
           --name "jagekrans-dev-web-deployment"
           --resource-group ${{ vars.AZURE_RESOURCE_GROUP }}
-          --template-file .infra/main.bicep --mode Incremental
+          --template-file .infra/main.bicep
+          --parameters '{ "siteName": { "value": "${{ vars.SITE_NAME }}" } '
+          --mode Incremental
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: setup-infra
-  #   steps:
-  #     # deploy static web app
-  #     - name: Deploy static web app
-  #       uses: Azure/static-web-apps-deploy@v0.0.1
-  #       with:
-  #         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-  #         repo_token: ${{ secrets.GITHUB_TOKEN }}
-  #         action: "upload"
-  #         app_location: "site"
-  #         output_location: "site"
+      - name: Get API token
+        id: get_token
+        run: |
+          token=$(az staticwebapp secrets list --name ${{ vars.SITE_NAME }}) --query "properties.apiKey")
+          echo "::add-mask::$token"
+          echo "::set-output name=token::$token"
+
+      - name: Deploy site
+        run: |
+          cd site
+          swa deploy --deployment-token ${{ steps.get_token.outputs.token }}
