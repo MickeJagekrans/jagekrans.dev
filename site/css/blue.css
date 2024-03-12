@@ -37,7 +37,13 @@
   letter-spacing: 0.05em;
 }
 
-/* TODO: extend classes with font classes in SASS */
+hr {
+  background-color: var(--copper);
+}
+
+a {
+  color: var(--copper);
+}
 
 html {
   background-color: var(--dark-blue);
@@ -57,10 +63,6 @@ header {
   color: var(--pale-bronze);
 }
 
-a {
-  color: var(--copper);
-}
-
 section {
   color: var(--whiteish);
 }
@@ -75,10 +77,6 @@ section h2 {
 
 #previous-roles {
   background-color: var(--blue-green);
-}
-
-#previous-roles hr {
-  background-color: var(--copper);
 }
 
 .role {
@@ -151,6 +149,10 @@ footer .copyright {
 
   a#contact-phone {
     font-size: min(2em, 3.4vw);
+  }
+
+  section#skills {
+    background-color: var(--blue-green);
   }
 
   section#contact input[type="text"],
