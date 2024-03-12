@@ -61,6 +61,9 @@ jobs:
           echo "::add-mask::$token"
           echo "::set-output name=token::$token"
 
+      - name: Install SWA CLI
+        run: npm install -g @azure/static-web-apps-cli
+
       - name: Deploy site
         run: |
           cd site
