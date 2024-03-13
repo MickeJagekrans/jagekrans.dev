@@ -72,7 +72,7 @@ jobs:
 
       - name: Get app URL
         run: |
-          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} --query "hostName" -o tsv)
+          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} --query "defaultHostname" -o tsv)
           echo "APP_URL=$url" >> $GITHUB_ENV
 
       - name: Set active subscription
