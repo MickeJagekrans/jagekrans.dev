@@ -61,9 +61,11 @@ jobs:
           echo "::add-mask::$token"
           echo "SWA_TOKEN=$token" >> $GITHUB_ENV
 
-      - name: Install SWA CLI
-        run: npm install -g @azure/static-web-apps-cli
-
-      - name: Deploy site
-        run: |
-          swa deploy site --deployment-token $SWA_TOKEN
+      - name: Deploy static web app
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ env.SWA_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: 'upload'
+          app_location: 'site'
+          # api_location: 'api'
