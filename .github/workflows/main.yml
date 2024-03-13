@@ -80,13 +80,14 @@ jobs:
       - name: Set active subscription
         run: az account set --subscription ${{ secrets.DNS_SUBSCRIPTION_ID }}
 
+        # Note that creating alias records where the DNS zone is in one subscription and the target resource is in another subscription
+        # requires that both subscriptions have "Microsoft.Network" as a registered resource provider.
       - name: Set DNS CNAME record
         run: |
           cnameRecordId=$(az network dns record-set cname list \
             -g ${{ env.DNS_RESOURCE_GROUP }} \
             -z ${{ env.ZONE_NAME }} \
             -o json | jq -r '.[] | select(.name == "${{ env.RECORD_SET_NAME }}") | .id')
-          echo "$cnameRecordId"
           az resource update --ids $cnameRecordId --set properties.targetResource.id="${{ env.APP_ID }}"
 
       - name: Reset active subscription
