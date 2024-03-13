@@ -86,6 +86,7 @@ jobs:
             -g ${{ env.DNS_RESOURCE_GROUP }} \
             -z ${{ env.ZONE_NAME }} \
             -o json | jq -r '.[] | select(.name == "${{ env.RECORD_SET_NAME }}") | .id')
+          echo "$cnameRecordId"
           az resource update --ids $cnameRecordId --set properties.targetResource.id="${{ env.APP_ID }}"
 
       - name: Reset active subscription
