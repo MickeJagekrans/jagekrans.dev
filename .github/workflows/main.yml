@@ -10,6 +10,8 @@ permissions:
 env:
   SITE_NAME: jagekrans-dev-web
   DNS_RESOURCE_GROUP: jagekrans-dev-rg
+  ZONE_NAME: jagekrans.dev
+  RECORD_SET_NAME: mikael
 
 jobs:
   # build:
@@ -72,7 +74,7 @@ jobs:
 
       - name: Get app URL
         run: |
-          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} --query "defaultHostname" -o tsv)
+          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --query "defaultHostname" -o tsv)
           echo "APP_URL=$url" >> $GITHUB_ENV
 
       - name: Set active subscription
@@ -82,6 +84,16 @@ jobs:
         run: >
           az network dns record-set cname set-record
           --resource-group ${{ env.DNS_RESOURCE_GROUP }}
-          --zone-name "jagekrans.dev"
-          --record-set-name "mikael"
+          --zone-name ${{ env.ZONE_NAME }}
+          --record-set-name ${{ env.RECORD_SET_NAME }}
           --cname ${{ env.APP_URL }}
+
+      - name: Reset active subscription
+        run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Add custom domain
+        run: >
+          az staticwebapp custom-domain add
+          --name ${{ env.SITE_NAME }}
+          --domain ${{ env.RECORD_SET_NAME }}.${{ env.ZONE_NAME }}
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
