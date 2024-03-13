@@ -270,13 +270,15 @@ footer {
 
   section#presentation {
     width: 60%;
-    padding-bottom: 5em;
+    padding-bottom: 3em;
     padding-right: 3em;
   }
 
   section#skills {
     width: 100%;
     max-width: unset;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 
   #skills-lists {
