@@ -74,26 +74,26 @@ jobs:
 
       - name: Get app URL
         run: |
-          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --query "defaultHostname" -o tsv)
-          echo "APP_URL=$url" >> $GITHUB_ENV
+          appId=$(az staticwebapp show --name ${{ env.SITE_NAME }} --query id -o tsv)
+          echo "APP_ID=$appId" >> $GITHUB_ENV
 
       - name: Set active subscription
         run: az account set --subscription ${{ secrets.DNS_SUBSCRIPTION_ID }}
 
       - name: Set DNS CNAME record
         run: >
-          az network dns record-set cname set-record
+          az network dns record-set alias set-record
           --resource-group ${{ env.DNS_RESOURCE_GROUP }}
           --zone-name ${{ env.ZONE_NAME }}
           --record-set-name ${{ env.RECORD_SET_NAME }}
-          --cname ${{ env.APP_URL }}
+          --target-resource ${{ env.APP_ID }}
 
       - name: Reset active subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Add custom domain
-        run: >
-          az staticwebapp custom-domain add
-          --name ${{ env.SITE_NAME }}
-          --domain ${{ env.RECORD_SET_NAME }}.${{ env.ZONE_NAME }}
-          --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
+      # - name: Add custom domain
+      #   run: >
+      #     az staticwebapp custom-domain add
+      #     --name ${{ env.SITE_NAME }}
+      #     --domain ${{ env.RECORD_SET_NAME }}.${{ env.ZONE_NAME }}
+      #     --resource-group ${{ env.AZURE_RESOURCE_GROUP }}
