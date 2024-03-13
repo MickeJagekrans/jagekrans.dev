@@ -87,8 +87,7 @@ jobs:
             -z ${{ env.ZONE_NAME }}
             -o json
             | jq -r '.[] | select(.name == "${{ env.RECORD_SET_NAME }}") | .id') &&
-          az resource update --ids $cnameRecordId --set properties.targetResource.id="$${{ env.APP_ID }}"
-          
+          az resource update --ids $cnameRecordId --set properties.targetResource.id="${{ env.APP_ID }}"
 
       - name: Reset active subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
