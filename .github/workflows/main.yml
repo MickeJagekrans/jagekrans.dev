@@ -84,4 +84,4 @@ jobs:
           --resource-group ${{ env.DNS_RESOURCE_GROUP }}
           --zone-name "jagekrans.dev"
           --record-set-name "mikael"
-          --cname $APP_URL
+          --cname ${{ env.APP_URL }}
