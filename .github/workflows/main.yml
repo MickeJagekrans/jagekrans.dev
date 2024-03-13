@@ -9,6 +9,7 @@ permissions:
 
 env:
   SITE_NAME: jagekrans-dev-web
+  DNS_RESOURCE_GROUP: jagekrans-dev-rg
 
 jobs:
   # build:
@@ -55,7 +56,6 @@ jobs:
           --mode Incremental
 
       - name: Get API token
-        id: get_token
         run: |
           token=$(az staticwebapp secrets list --name ${{ env.SITE_NAME }} --query "properties.apiKey" -o tsv)
           echo "::add-mask::$token"
@@ -69,3 +69,16 @@ jobs:
           action: 'upload'
           app_location: 'site'
           # api_location: 'api'
+
+      - name: Get app URL
+        run: |
+          url=$(az staticwebapp show --name ${{ env.SITE_NAME }} --resource-group ${{ vars.AZURE_RESOURCE_GROUP }} --query "hostName" -o tsv)
+          echo "APP_URL=$url" >> $GITHUB_ENV
+
+      - name: Set DNS CNAME record
+        run: >
+          az network dns record-set cname set-record
+          --resource-group ${{ env.DNS_RESOURCE_GROUP }}
+          --zone-name "jagekrans.dev"
+          --record-set-name "mikael"
+          --cname $APP_URL
