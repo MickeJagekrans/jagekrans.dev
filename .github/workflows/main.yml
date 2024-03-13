@@ -82,11 +82,13 @@ jobs:
 
       - name: Set DNS CNAME record
         run: >
-          az network dns record-set alias set-record
-          --resource-group ${{ env.DNS_RESOURCE_GROUP }}
-          --zone-name ${{ env.ZONE_NAME }}
-          --record-set-name ${{ env.RECORD_SET_NAME }}
-          --target-resource ${{ env.APP_ID }}
+          cnameRecordId=$(az network dns record-set cname list
+            -g ${{ env.DNS_RESOURCE_GROUP }}
+            -z ${{ env.ZONE_NAME }}
+            -o json
+            | jq -r '.[] | select(.name == "${{ env.RECORD_SET_NAME }}") | .id') &&
+          az resource update --ids $cnameRecordId --set properties.targetResource.id="$${{ env.APP_ID }}"
+          
 
       - name: Reset active subscription
         run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
