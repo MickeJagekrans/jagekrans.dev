@@ -191,6 +191,8 @@ a#contact-phone {
 
 #contact-form {
   display: flex;
+  /* TODO: remove this line once form functionality is up and running */
+  display: none;
   flex-direction: column;
   align-items: center;
   padding-top: 1.5em;
