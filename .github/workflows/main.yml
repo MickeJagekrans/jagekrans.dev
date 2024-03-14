@@ -77,30 +77,13 @@ jobs:
           appId=$(az staticwebapp show --name ${{ env.SITE_NAME }} --query id -o tsv)
           echo "APP_ID=$appId" >> $GITHUB_ENV
 
-      - name: Set active subscription
-        run: az account set --subscription ${{ secrets.DNS_SUBSCRIPTION_ID }}
-
-        # Note that creating alias records where the DNS zone is in one subscription and the target resource is in another subscription
-        # requires that both subscriptions have "Microsoft.Network" as a registered resource provider.
-      - name: Set DNS CNAME alias record
-        run: |
-          cnameRecordId=$(az network dns record-set cname list \
-            -g ${{ env.DNS_RESOURCE_GROUP }} \
-            -z ${{ env.ZONE_NAME }} \
-            -o json \
-            | jq -r '.[] | select(.name == "${{ env.RECORD_SET_NAME }}") | .id')
-
-          az resource update \
-            --ids $cnameRecordId \
-            --set \
-              properties.targetResource.id="${{ env.APP_ID }}" \
-              properties.TTL=600
-
-      - name: Reset active subscription
-        run: az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      - name: Add custom domain
+      - name: Create DNS record and configure custom hostname
         run: >
-          az staticwebapp hostname set
-          --name ${{ env.SITE_NAME }}
-          --hostname ${{ env.RECORD_SET_NAME }}.${{ env.ZONE_NAME }}
+          bash ./build-scripts/set-app-custom-hostname.sh
+          --site-name ${{ env.SITE_NAME }}
+          --dns-resource-group ${{ env.DNS_RESOURCE_GROUP }}
+          --zone-name ${{ env.ZONE_NAME }}
+          --record-set-name ${{ env.RECORD_SET_NAME }}
+          --app-id ${{ env.APP_ID }}
+          --dns-subscription-id ${{ secrets.DNS_SUBSCRIPTION_ID }}
+          --azure-subscription-id ${{ secrets.AZURE_SUBSCRIPTION_ID }}
