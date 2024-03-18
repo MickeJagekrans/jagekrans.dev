@@ -168,14 +168,14 @@ section h3 {
 }
 
 .role {
-  padding-top: 1em;
-  padding-bottom: 1em;
   cursor: pointer;
   border-color: var(--dark-copper) !important;
 }
 
 .role summary {
   list-style-type: none;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .role summary::-webkit-details-marker {
@@ -212,6 +212,34 @@ section h3 {
   font-size: 0.8em;
 }
 
+.role .role-description p {
+  margin-top: 0;
+}
+
+#additional-roles {
+  display: none;
+}
+
+#show-all-roles {
+  display: block;
+}
+
+#show-less-roles {
+  display: none;
+}
+
+#additional-roles:target {
+  display: block;
+}
+
+#additional-roles:target ~ #show-less-roles {
+  display: block;
+}
+
+#additional-roles:target ~ #show-all-roles {
+  display: none;
+}
+
 .toggle-roles-button {
   width: 100%;
   text-align: center;
@@ -222,18 +250,6 @@ section h3 {
   background-color: transparent;
   color: var(--copper);
   font-weight: 200;
-}
-
-#show-less-roles {
-  display: none;
-}
-
-#additional-roles {
-  display: none;
-}
-
-#additional-roles.show {
-  display: block;
 }
 
 a#contact-phone {
