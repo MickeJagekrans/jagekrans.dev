@@ -65,7 +65,7 @@ body {
 header {
   min-height: 15vh;
   width: 100%;
-  padding: 3em 0;
+  padding: 3em 0 1em;
   color: var(--copper);
 }
 
