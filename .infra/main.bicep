@@ -1,25 +1,26 @@
 param location string = 'westeurope'
-param siteName string = 'jagekrans-dev-web'
+param siteName string
+param msgReceiver string
 
-resource staticSite 'Microsoft.Web/staticSites@2023-01-01' = {
-  name: siteName
-  location: location
-  sku: {
-    name: 'Free'
-    tier: 'Free'
-  }
-  properties: {
-    stagingEnvironmentPolicy: 'Enabled'
-    allowConfigFileUpdates: true
-    provider: 'None'
-    enterpriseGradeCdnStatus: 'Disabled'
+@secure()
+param sendGridApiKey string
+
+module appInsights './app-insights.bicep' = {
+  name: '${deployment().name}-appInsights'
+  params: {
+    location: location
+    siteName: siteName
   }
 }
 
-resource basicAuth 'Microsoft.Web/staticSites/basicAuth@2023-01-01' = {
-  parent: staticSite
-  name: 'default'
-  properties: {
-    applicableEnvironmentsMode: 'SpecifiedEnvironments'
+module staticWebApp './static-web-app.bicep' = {
+  name: '${deployment().name}-staticWebApp'
+  params: {
+    location: location
+    siteName: siteName
+    appInsightsInstrumentationKey: appInsights.outputs.instrumentationKey
+    appInsightsConnectionString: appInsights.outputs.connectionString
+    msgReceiver: msgReceiver
+    sendGridApiKey: sendGridApiKey
   }
 }
