@@ -70,7 +70,8 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: 'upload'
           app_location: 'site'
-          # api_location: 'api'
+          api_location: 'api'
+          env_vars: '{"TEST_ENV_VAR": "test-value"}'
 
       - name: Get app URL
         run: |

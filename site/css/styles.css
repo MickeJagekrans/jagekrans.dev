@@ -257,10 +257,23 @@ a#contact-phone {
   font-size: min(2em, 9vw);
 }
 
+section#contact-success,
+section#contact-failed {
+  display: none;
+}
+
+section#contact-success:target,
+section#contact-failed:target {
+  display: block;
+}
+
+section#contact-success:target ~ section#contact,
+section#contact-failed:target ~ section#contact {
+  display: none;
+}
+
 #contact-form {
   display: flex;
-  /* TODO: remove this line once form functionality is up and running */
-  display: none;
   flex-direction: column;
   align-items: center;
   padding-top: 1.5em;
@@ -292,15 +305,27 @@ footer {
   min-height: 14vh;
   width: 100%;
   font-size: 1em;
+  background-color: black;
+  padding: 2em 0;
+}
+
+footer .social-media {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
-  background-color: black;
+  height: 100%;
+}
+
+footer .social-media img {
+  width: 1.5em;
 }
 
 footer .copyright {
   color: var(--whiteish);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
 }
 
 @media (hover: hover) {
@@ -402,10 +427,6 @@ footer .copyright {
   section#contact input[type="email"],
   section#contact textarea {
     background-color: var(--blue-green);
-  }
-
-  footer {
-    height: 20vh;
   }
 }
 

@@ -1,0 +1,13 @@
+{
+  "name": "mikael.jagekrans.dev",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "swa start ./site --api-location ./api"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@azure/static-web-apps-cli": "^1.1.7"
+  }
+}
