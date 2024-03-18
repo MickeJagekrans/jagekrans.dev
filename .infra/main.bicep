@@ -6,7 +6,7 @@ param msgReceiver string
 param sendGridApiKey string
 
 module appInsights './app-insights.bicep' = {
-  name: '${deployment().name}-appInsights'
+  name: '${deployment().name}-appinsights'
   params: {
     location: location
     siteName: siteName
@@ -14,7 +14,7 @@ module appInsights './app-insights.bicep' = {
 }
 
 module staticWebApp './static-web-app.bicep' = {
-  name: '${deployment().name}-staticWebApp'
+  name: '${deployment().name}-static-web-app'
   params: {
     location: location
     siteName: siteName
