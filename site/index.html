@@ -15,8 +15,7 @@
   <meta property="og:image" content="/images/profile-original.jpeg">
   <meta property="og:url" content="https://jagekrans.dev">
   <link rel="stylesheet" type="text/css" href="css/modern-normalize.css">
-  <link rel="stylesheet" type="text/css" href="css/root.css">
-  <link rel="stylesheet" type="text/css" href="css/blue.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -34,19 +33,7 @@
         padding-bottom: 2em;
       }
 
-      .role {
-        cursor: default;
-      }
-
-      .role .role-header .caret {
-        display: none;
-      }
-
       #additional-roles {
-        display: block;
-      }
-
-      .role .role-description {
         display: block;
       }
     </style>
@@ -182,15 +169,14 @@
 
       <hr>
 
-      <div class="role">
-        <div class="role-header">
+      <details class="role">
+        <summary>
           <h3>Handelsbanken</h3>
-          <div class="caret"></div>
-        </div>
-        <div class="role-metadata lexend-deca extralight">
-          <span class="role-title">DevOps Engineer | Consultant</span>
-          <span class="role-period">May 23 - Oct 23</span>
-        </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">DevOps Engineer | Consultant</span>
+            <span class="role-period">May 23 - Oct 23</span>
+          </div>
+        </summary>
         <div class="role-description">
           <p>Development, maintenance, and improvement of CI/CD pipelines in Azure DevOps for their customer meeting
             places.</p>
@@ -200,19 +186,18 @@
             control over code changes. The code owner approvals solution was built in Node.js and vanilla JavaScript to
             avoid having to set up unnecessary build chains and -pipelines.</p>
         </div>
-      </div>
+      </details>
 
       <hr>
 
-      <div class="role">
-        <div class="role-header">
+      <details class="role">
+        <summary>
           <h3>Scrive / Esignatur</h3>
-          <div class="caret"></div>
-        </div>
-        <div class="role-metadata lexend-deca extralight">
-          <span class="role-title">DevOps Engineer | Consultant</span>
-          <span class="role-period">Nov 22 - Mar 23</span>
-        </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">DevOps Engineer | Consultant</span>
+            <span class="role-period">Nov 22 - Mar 23</span>
+          </div>
+        </summary>
         <div class="role-description">
           <p>Was responsible for Esignatur's entire CI/CD setup in Azure DevOps.</p>
           <p>Refactored and split their existing pipeline into multiple smaller pipelines each deploying a part of the
@@ -223,19 +208,18 @@
           <p>Set up Mac app code signing and notarization in the desktop app deployment pipeline.</p>
           <p>Introduced automated UI-testing with Selenium and SpecFlow written in C#/.NET.</p>
         </div>
-      </div>
+      </details>
 
       <hr>
 
-      <div class="role">
-        <div class="role-header">
+      <details class="role">
+        <summary>
           <h3>H&M Group</h3>
-          <div class="caret"></div>
-        </div>
-        <div class="role-metadata lexend-deca extralight">
-          <span class="role-title">Software Engineer | Consultant</span>
-          <span class="role-period">Oct 18 - Jun 22</span>
-        </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Software Engineer | Consultant</span>
+            <span class="role-period">Oct 18 - Jun 22</span>
+          </div>
+        </summary>
         <div class="role-description">
           <p>Worked with building tools and services for automating tasks such as DNS configuration, Azure AD identity
             management, TLS/SSL certificate issuance, and app service authentication configuration via CI/CD pipeline
@@ -249,37 +233,35 @@
             implementing everything-as-code, configuring automated deployments via CI/CD pipelines, and setting up
             comprehensive monitoring.</p>
         </div>
-      </div>
+      </details>
 
       <hr>
 
-      <div class="role">
-        <div class="role-header">
+      <details class="role">
+        <summary>
           <h3>Telenor Connexion</h3>
-          <div class="caret"></div>
-        </div>
-        <div class="role-metadata lexend-deca extralight">
-          <span class="role-title">Software Engineer | Consultant</span>
-          <span class="role-period">May 18 - Sep 18</span>
-        </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Software Engineer | Consultant</span>
+            <span class="role-period">May 18 - Sep 18</span>
+          </div>
+        </summary>
         <div class="role-description">
           <p>Worked on an IoT device management system written in JavaScript/Node.js, mainly focusing on CI/CD pipeline
             optimization and test suite feedback loop improvement. Project build time was successfully shortened from 20
             minutes to 5 minutes.</p>
         </div>
-      </div>
+      </details>
 
       <hr>
 
-      <div class="role">
-        <div class="role-header">
+      <details class="role">
+        <summary>
           <h3>Magine AB</h3>
-          <div class="caret"></div>
-        </div>
-        <div class="role-metadata lexend-deca extralight">
-          <span class="role-title">Back-end Engineer</span>
-          <span class="role-period">Sep 16 - May 18</span>
-        </div>
+          <div class="role-metadata lexend-deca extralight">
+            <span class="role-title">Back-end Engineer</span>
+            <span class="role-period">Sep 16 - May 18</span>
+          </div>
+        </summary>
         <div class="role-description">
           <p>Development and maintenance of the audio/video transcoder stack and automated perceptual quality tests, as
             well as the transcoder support systems and subtitle pipeline. The systems were built in Elixir utilizing
@@ -287,58 +269,54 @@
           <p>Worked on a smart TV application for Tizen and Orsay (Samsung TV OSs) including a buffered real-time
             subtitle decoder due to a lack of support for modern subtitle formats in Orsay.</p>
         </div>
-      </div>
+      </details>
 
       <hr>
 
       <div id="additional-roles">
-
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Board Intelligence Ltd.</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Full-stack Engineer</span>
-            <span class="role-period">Mar 16 - Sep 16</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Full-stack Engineer</span>
+              <span class="role-period">Mar 16 - Sep 16</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Developed and maintained a board reporting tool written in Ruby-on-Rails, mainly focusing on the backend
               API and the PDF generation pipeline. Migrated the system from a single server to a self-hosted UK-wide
               distributed server cluster.</p>
             <p>Planned and executed a migration of the web frontend from AngularJS to React w/ Redux.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Flow XO LLC</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Back-end Engineer | Consultant</span>
-            <span class="role-period">Jan 16 - Mar 16</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Back-end Engineer | Consultant</span>
+              <span class="role-period">Jan 16 - Mar 16</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Developed a tool for automating integrations between different external services and APIs in
               JavaScript/Node.js, leading to a big reduction in time needed to configure a new integration in the
               pre-existing integration automation system.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Tuzame AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Full-stack Engineer</span>
-            <span class="role-period">Mar 14 - Nov 15</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Full-stack Engineer</span>
+              <span class="role-period">Mar 14 - Nov 15</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Designed and implemented a large-scale centralized multi-vendor product database backed by a graph
               database and a Redis cache, complete with a web UI for administration. All systems were written in
@@ -346,72 +324,69 @@
             <p>Built a white-label cross-platform mobile application solution and built several mobile apps on top of
               it.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Vendre AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Back-end Engineer | Consultant</span>
-            <span class="role-period">Dec 13 - Feb 14</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Back-end Engineer | Consultant</span>
+              <span class="role-period">Dec 13 - Feb 14</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Analyzed and evaluated if their e-commerce platform could be migrated from PHP to Node.js in a cost- and
               time efficient manner.</p>
             <p>Majorly improved the query performance for one of their client’s online store by reconfiguring their Solr
               search engine instance.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Hogia Terminal Systems AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Lead Web Developer</span>
-            <span class="role-period">Dec 12 - Dec 13</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Lead Web Developer</span>
+              <span class="role-period">Dec 12 - Dec 13</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Designed, built, and maintained a web-based terminal management system and helped out with maintaining
               their old application server written in VB6. The new web platform was built in C# .NET.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Svensk Lånemarknad AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Software Developer</span>
-            <span class="role-period">Sep 12 - Nov 12</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Software Developer</span>
+              <span class="role-period">Sep 12 - Nov 12</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Migrated and refactored a pre-existing loan application system and peripheral support systems to a more
               modern, performant, and fault-tolerant solution written in Ruby.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
-            <h3>ComAround AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Software Engineer</span>
-            <span class="role-period">Mar 11 - Sep 12</span>
-          </div>
+        <details class="role">
+          <summary>
+            <div class="role-header">
+              <h3>ComAround AB</h3>
+              <div class="role-metadata lexend-deca extralight">
+                <span class="role-title">Software Engineer</span>
+                <span class="role-period">Mar 11 - Sep 12</span>
+              </div>
+          </summary>
           <div class="role-description">
             <p>Maintenance of an older self-service support platform and design, development and maintenance of a new
               version of the platform built from the ground-up using modern web techniques. The original system was
@@ -420,25 +395,24 @@
             <p>Responsible for designing, implementing, and configuring a search engine solution based on Apache Solr.
             </p>
           </div>
-        </div>
+        </details>
 
         <hr>
 
-        <div class="role">
-          <div class="role-header">
+        <details class="role">
+          <summary>
             <h3>Sphinxly AB</h3>
-            <div class="caret"></div>
-          </div>
-          <div class="role-metadata lexend-deca extralight">
-            <span class="role-title">Web Developer</span>
-            <span class="role-period">Dec 09 - Sep 10</span>
-          </div>
+            <div class="role-metadata lexend-deca extralight">
+              <span class="role-title">Web Developer</span>
+              <span class="role-period">Dec 09 - Sep 10</span>
+            </div>
+          </summary>
           <div class="role-description">
             <p>Implementation of websites from designs on top of an in-house built Content Management System (CMS) in
               parallel with some development and maintenance of the CMS itself. Everything was built in C# and ASP.NET
               Web Forms.</p>
           </div>
-        </div>
+        </details>
 
         <hr>
       </div>
@@ -478,11 +452,6 @@
       const showLessRoles = document.querySelector('#show-less-roles');
       const toggleAllRoles = document.querySelectorAll('.toggle-roles-button');
       const additionalRoles = document.querySelector('#additional-roles');
-      const allRoles = document.querySelectorAll('.role');
-
-      allRoles.forEach((role) => {
-        role.addEventListener('pointerup', () => role.classList.toggle('expanded'));
-      });
 
       toggleAllRoles.forEach((button) => {
         button.addEventListener('pointerup', toggleRoles);

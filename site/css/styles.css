@@ -1,9 +1,45 @@
+:root {
+  --dark-blue: #202c39;
+  --blue-green: #283845;
+  --pale-bronze: #b8b08d;
+  --gold: #F2D492;
+  --copper: #F29559;
+  --dark-copper: #c4740b;
+  --whiteish: #EEF0EB;
+  --font-tahoma: Tahoma, Verdana, Segoe, sans-serif;
+  --font-didot: "Didot", "Didot LT STD", "Hoefler Text", Garamond, "Calisto MT", "Times New Roman", serif;
+}
+
+.instrument-serif {
+  font-weight: 400;
+  font-family: "Instrument Serif", Baskerville, serif;
+}
+
+.instrument-serif.regular {
+  font-style: normal;
+}
+
+.lexend-deca {
+  font-family: "Lexend Deca", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.lexend-deca.thin {
+  font-weight: 100;
+}
+
+.lexend-deca.extralight {
+  font-weight: 200;
+}
+
 a {
   display: flex;
   justify-content: center;
   align-self: center;
   padding: 1em;
   font-size: 1.5em;
+  color: var(--copper);
 }
 
 hr {
@@ -11,18 +47,26 @@ hr {
   border: none;
   margin: 0;
   padding: 0;
+  background-color: var(--copper);
+}
+
+html {
+  background-color: var(--dark-blue);
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: var(--font-tahoma);
+  font-weight: 200;
 }
 
 header {
   min-height: 15vh;
   width: 100%;
   padding: 3em 0;
+  color: var(--copper);
 }
 
 #header-title {
@@ -45,6 +89,7 @@ header {
   font-size: 3.6vw;
   margin-top: 0.5em;
   letter-spacing: 0.15em;
+  color: var(--pale-bronze);
 }
 
 main {
@@ -80,10 +125,15 @@ section {
   padding: 0.5em 5vw;
   font-size: 1.1em;
   line-height: 1.5em;
+  color: var(--whiteish);
 }
 
 section h2 {
   font-size: 2em;
+  color: var(--copper);
+  font-family: "Instrument Serif", Baskerville, serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 section h3 {
@@ -114,49 +164,48 @@ section h3 {
 
 #previous-roles {
   padding-bottom: 0;
+  background-color: var(--blue-green);
 }
 
 .role {
   padding-top: 1em;
   padding-bottom: 1em;
   cursor: pointer;
+  border-color: var(--dark-copper) !important;
 }
 
-.role .role-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 0.5em;
+.role summary {
+  list-style-type: none;
 }
 
-.role h3 {
-  margin: 0;
-}
-
-.role .role-description {
+.role summary::-webkit-details-marker {
   display: none;
 }
 
-.role.expanded .role-description {
-  display: block;
+.role summary::before {
+  color: var(--copper);
+  content: "+";
+  float: right;
+  font-size: 1.5em;
 }
 
-.role .caret {
-  background-image: url(/icons/caret.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 1.5em;
-  height: 1.5em;
+.role[open] summary::before {
+  content: "–";
 }
 
-.role.expanded .caret {
-  transform: rotate(180deg);
+.role h3 {
+  display: inline;
+  margin: 0;
+  color: var(--copper);
+  font-weight: 300;
 }
 
 .role .role-metadata {
+  padding-top: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  color: var(--pale-bronze);
 }
 
 .role .role-period {
@@ -170,6 +219,9 @@ section h3 {
   cursor: pointer;
   border: none;
   font-size: 1.2em;
+  background-color: transparent;
+  color: var(--copper);
+  font-weight: 200;
 }
 
 #show-less-roles {
@@ -204,10 +256,20 @@ a#contact-phone {
   padding: 0.8em 0.5em;
   font-size: 1.1em;
   margin-bottom: 0.5em;
+  background-color: var(--blue-green);
+  color: var(--whiteish);
+  border: 2px solid var(--blue-green);
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border: 2px solid var(--copper);
 }
 
 #contact-form input[type="submit"] {
   cursor: pointer;
+  background-color: var(--copper);
+  color: var(--dark-blue);
 }
 
 footer {
@@ -218,6 +280,21 @@ footer {
   justify-content: center;
   align-items: center;
   margin-top: auto;
+  background-color: black;
+}
+
+footer .copyright {
+  color: var(--whiteish);
+}
+
+@media (hover: hover) {
+  .role:hover h3 {
+    color: var(--whiteish)!important;
+  }
+
+  #contact-form input[type="submit"]:hover {
+    color: var(--whiteish);
+  }
 }
 
 @media (max-width: 419px) {
@@ -281,6 +358,7 @@ footer {
     max-width: unset;
     padding-left: 3em;
     padding-right: 3em;
+    background-color: var(--blue-green);
   }
 
   #skills-lists {
@@ -292,12 +370,22 @@ footer {
       width: 50%;
   }
 
+  section#previous-roles {
+    background-color: var(--dark-blue);
+  }
+
   .role .role-period {
     font-size: 1em;
   }
 
   a#contact-phone {
-    font-size: min(2em, 3vw);
+    font-size: min(2em, 3.4vw);
+  }
+
+  section#contact input[type="text"],
+  section#contact input[type="email"],
+  section#contact textarea {
+    background-color: var(--blue-green);
   }
 
   footer {
