@@ -77,9 +77,9 @@ jobs:
         run: >
           az staticwebapp appsettings set
           --name ${{ env.SITE_NAME }}
-          --setting
-            "SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }}"
-            "MSG_RECEIVER=${{ secrets.MSG_RECEIVER }}"
+          --settings-names
+            SENDGRID_API_KEY="${{ secrets.SENDGRID_API_KEY }}"
+            MSG_RECEIVER="${{ secrets.MSG_RECEIVER }}"
           --output none
 
       - name: Get app URL
