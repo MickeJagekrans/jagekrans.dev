@@ -80,13 +80,7 @@ jobs:
           action: 'upload'
           app_location: 'site'
           api_location: 'api'
-
-      # I am not loving this approach, but it is the only way to set environment variables for the app
-      # - name: Set environment variables
-      #   run: >
-      #     az staticwebapp appsettings set
-      #     --name ${{ env.SITE_NAME }}
-      #     --setting-names SENDGRID_API_KEY="${{ secrets.SENDGRID_API_KEY }}" MSG_RECEIVER="${{ secrets.MSG_RECEIVER }}"
+          config_file_location: './'
 
       - name: Get app URL
         run: |
