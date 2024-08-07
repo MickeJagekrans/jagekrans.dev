@@ -85,7 +85,7 @@ header {
   font-size: 14vw;
 }
 
-#header-title-subtitle {
+.header-title-subtitle {
   font-size: 3.6vw;
   margin-top: 0.5em;
   letter-spacing: 0.15em;
